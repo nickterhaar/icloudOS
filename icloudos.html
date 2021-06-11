@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<?php
-    session_start();
-?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,15 +9,6 @@
     <title>icloudOS</title>
 </head>
 <body>
-    <?php
-        if (!isset($_SESSION['first-name'])) {
-            header("Location: index.php");
-            exit();
-        };
-
-        $firstname = $_SESSION['first-name'];
-        $lastname = $_SESSION['last-name'];
-    ?>
     <img id="wallpaper" src="assets/images/backgrounds/bigsur-light.jpeg" alt="wallpaper">
     <div class="navbar">
         <div class="menu-left">
@@ -52,7 +40,7 @@
                 <p>Restart...</p>
                 <p>Shutdown...</p>
                 <p>Lock Screen</p>
-                <p>Log Out <?= $firstname; ?> <?= $lastname; ?></p>
+                <p>Log Out FIRST_NAME LAST_NAME</p>
             </div>
         </div>
         <!-- <div class="nav-menu finder-menu" id="finder-menu" onmouseleave="menuHide('finder-menu')">
@@ -180,7 +168,7 @@
                 </ul>
                 <p>Locations</p>
                 <ul>
-                    <li><i class="fas fa-desktop"></i><?= $firstname; ?>'s iMac</li>
+                    <li><i class="fas fa-desktop"></i>USER_NAME's iMac</li>
                     <li><i class="fas fa-globe"></i>Network</li>
                 </ul>
             </div>
@@ -190,7 +178,7 @@
                 <div class="finder-content-bar-left">
                     <i class="fas fa-chevron-left"></i>
                     <i class="fas fa-chevron-right"></i>
-                    <p>Pictures</p>
+                    <p>FOLDER_NAME</p>
                 </div>
                 <div class="finder-content-bar-right">
                     <i class="fas fa-search"></i>
@@ -217,10 +205,6 @@
         </div>
     </div>
 
-    <div class="picture-container" id="picture-window" onclick="show('picture-window')">
-        
-    </div>
-
     <div class="help-container" id="help-window" onclick="show('help-window')">
         <div class="help-top-bar">
             <p onclick="hide('help-window')">x</p>
@@ -228,7 +212,6 @@
         <h1>Hier komt het helpscherm</h1>
         <h2>Dit scherm legt je uit hoe je de webapplicatie kunt gebruiken</h2>
     </div>
-
 
     <div class="notes-container" id="notes-window" onclick="show('notes-window')">
         <div class="notes-sidebar">
@@ -280,17 +263,18 @@
                 </div>
             </div>
             <div class="notes-content-field">
-                <h1>Welcome <?= $firstname;?> to icloudOS</h1>
+                <h1>Welcome to icloudOS</h1>
                 <h3>About icloudOS</h3>
-                <p><strong>icloudOS</strong> was started by <strong>Nick ter Haar</strong> as a fun project during his <br> Full Stack Web Developer starter course at <strong>Bit Academy</strong>.</p>
+                <p><strong>icloudOS</strong> was started by <strong>Nick ter Haar</strong> as a fun project as he was taking a Full Stack Web Developer starter course at <strong>Bit Academy</strong>.</p>
                 <p>This project is in no way related to <strong>Apple</strong> or any of <strong>Apple</strong> subsidiaries. And was initiated as a personal and fun way to use my newly learned skills.</p>
                 <h3>Navigation</h3>
                 <p>As you've seen when you first logged in, this screen is the screen you will be welcomed with. To close this screen, click on the red or yellow dot in the left top corner.</p>
                 <p>Besides this screen there are some others to explorer.</p>
                 <p><img src="assets/icons/37_finder.png" alt=""> <strong>Finder</strong> is one of the exploreble screens. You can open this screen by clicking on <img src="assets/icons/37_finder.png" alt="">.</p>
-                <p><strong>About This Mac</strong> can be opened by clicking the <i class="fab fa-apple"></i> in the left top corner. When you click on the <i class="fab fa-apple"></i> a menu will open. The first option will be the 'About This Mac' option. Once clicked, the 'About This Mac' window will open.</p>
+                <p><strong>About This Mac</strong> can be opened by click the <i class="fab fa-apple"></i> in the left top corner. When you click on the <i class="fab fa-apple"></i> a menu will open. The first option will be the 'About This Mac' option. Once clicked, the 'About This Mac' window will open.</p>
                 <h3>Change Wallpaper</h3>
                 <p>To change the wallpaper you have to open the System Preferences by clicking on <img src="assets/icons/08_system-preferences.png" alt="">.</p>
+                <h3>How it was build</h3>
             </div>
         </div>
     </div>
@@ -317,7 +301,7 @@
             <div class="os-info">
                 <p id="os-name"><strong>icloudOS</strong> Utrechtse Heuvelrug</p>
                 <p id="os-version">Version 1.0.0</p>
-                <!-- <p class="os-about" id="browser"></p> -->
+                <p class="os-about"><strong>Browser</strong> BROWSER_NAME</p>
                 <p class="os-about"><strong>Made with</strong> HTML/CSS - JavaScript - PHP</p>
             </div>
         </div>
@@ -369,7 +353,7 @@
         <div class="dock-items">
             <img src="assets/icons/37_finder.png" alt="" onclick="show('finder-window')">
             <img src="assets/icons/23_notes.png" alt="" onclick="show('notes-window')">
-            <!-- <img src="assets/icons/34_help-viewer.png" alt="" onclick="show('help-window')"> -->
+            <img src="assets/icons/34_help-viewer.png" alt="" onclick="show('help-window')">
             <img src="assets/icons/08_system-preferences.png" alt="" onclick="show('systempref-window')">
             <!-- <img src="assets/icons/30_launchpad.png" alt="">
             <img src="assets/icons/15_safari.png" alt="">
@@ -386,11 +370,6 @@
             <img src="assets/icons/19_podcast.png" alt="">
             <img src="assets/icons/63_appstore.png" alt=""> -->
         </div>
-    </div>
-    <div class="small-screen">
-        <h1>icloudOS</h1>
-        <p>Unfortunately for now your screen is too small to use icloudOS.</p>
-        <p>A version for smaller screensizes will come later. For now your screen has to be at least 1920 by 1080 to use icloudOS.</p>
     </div>
     <script src="script.js"></script>
 </body>

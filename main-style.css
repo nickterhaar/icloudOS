@@ -205,6 +205,10 @@ img {
     border-bottom-left-radius: .5rem;
 }
 
+.finder-sidebar:hover {
+    cursor: default;
+}
+
 /* FINDER SIDEBAR CONTENT */
 .sidebar-content {
     padding: 1rem;
@@ -322,6 +326,9 @@ img {
     align-items: center;
 }
 
+/* PICTURE PREVIEW */
+
+
 /* HELP */
 .help-container {
     width: 590px;
@@ -382,6 +389,10 @@ img {
     border-radius: .5rem;
     z-index: 0;
     box-shadow: 0 0 10px rgb(100, 100, 100);
+}
+
+.notes-container:hover {
+    cursor: default;
 }
 
 .notes-sidebar {
@@ -697,7 +708,7 @@ img {
 
 #os-version {
     margin-top: .2rem;
-    margin-bottom: 1.3rem;
+    margin-bottom: 2.5rem;
 }
 
 #os-version:hover {
@@ -880,3 +891,26 @@ img {
     height: 100%;
 } */
 
+.small-screen {
+    display: none;
+    flex-flow: column;
+    position: absolute;
+    width: 200px;
+}
+
+@media only screen and (max-width: 1919px) {
+    .navbar, .navbar-menu-container, .finder-container, .picture-container, .help-container, .notes-container, .about-container, .systempref-container, .dock {
+        display: none;
+    }
+
+    img {
+        filter: blur(5px);
+    }
+
+    .small-screen {
+        display: flex;
+        flex-flow: column;
+        position: absolute;
+        width: 200px;
+    }
+}

@@ -35,5 +35,5 @@ function wallpaperChange(picture) {
     document.getElementById('wallpaper-name').innerText = picture;
 }
 
-var browserName = navigator.userAgent;
-document.getElementById('browser').innerHTML = '<strong>Browser</strong> ' + browserName;
+// var browserName = navigator.userAgent;
+// document.getElementById('browser').innerHTML = '<strong>Browser</strong> ' + browserName;
